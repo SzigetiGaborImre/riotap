@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    let API_KEY = "RGAPI-a781a137-6040-4bdf-b235-db6c0915fc6e"
+    let summonerName = "gabiky"
+    let url = "https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+summonerName+"?api_key=" + API_KEY
+
+    fetch(url)
+        .then(response => response.json())
+        .then(summoner_data => {
+            console.log(summoner_data);
+            let summonerid = summoner_data.id;
+            let url2 = "https://eun1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/"+summonerid+"?api_key=" + API_KEY
+
+            /* SUMMONER */
+
+            fetch(url2)
+            .then(response => response.json())
+            .then(charaters => {
+                console.log(charaters)
+
+                /*  KARAKTEREK */
+
+
+            })
+            
+
+
+
+
+
+        });
+
+    </script>
+</body>
+</html>
